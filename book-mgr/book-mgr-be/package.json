@@ -1,15 +1,19 @@
 {
-  "name": "book-mgr-be",
-  "version": "1.0.0",
-  "description": "毕设",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "CaiCai",
-  "license": "ISC",
-  "dependencies": {
-    "koa": "^2.13.4",
-    "mongoose": "^6.7.3"
-  }
+    "name": "book-mgr-be",
+    "version": "1.0.0",
+    "description": "毕设",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon src/index"
+    },
+    "author": "CaiCai",
+    "license": "ISC",
+    "dependencies": {
+        "@koa/cors": "^4.0.0",
+        "@koa/router": "^12.0.0",
+        "koa": "^2.13.4",
+        "koa-bodyparser": "^4.3.0",
+        "mongoose": "^6.7.3"
+    }
 }

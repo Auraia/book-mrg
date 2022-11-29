@@ -1,5 +1,5 @@
 require('./Schemas/User');
-
+require('./Schemas/InviteCode')
 const mongoose = require('mongoose');
 //给哪个数据库的
 //哪个集合

@@ -10,7 +10,10 @@
             <a-tabs>
                 <a-tab-pane key="1" tab="登录">
                     <div class="item">
-                        <a-input size="large" placeholder="账户">
+                        <a-input 
+                        v-model:value="loginForm.account"
+                        size="large" 
+                        placeholder="账户">
                             <template v-slot:prefix>
                                 <UserOutlined />
                             </template>
@@ -19,7 +22,10 @@
                     </div>
 
                     <div class="item">
-                        <a-input size="large" placeholder="密码">
+                        <a-input 
+                        v-model:value="loginForm.password"
+                        size="large" 
+                        placeholder="密码">
                             <template v-slot:prefix>
                                 <LockOutlined />
                             </template>
@@ -30,7 +36,10 @@
                     </div>
 
                     <div class="item">
-                        <a-button size="large" type="primary">
+                        <a-button 
+                        @click="login"
+                        size="large" 
+                        type="primary">
                             登录
                         </a-button>
                     </div>
@@ -61,7 +70,10 @@
                         </a-input>
                     </div>
                     <div class="item">
-                        <a-input size="large" placeholder="邀请码">
+                        <a-input size="large" 
+                        placeholder="邀请码"
+                        v-model:value="regForm.inviteCode"
+                        >
                             <template v-slot:prefix>
                                 <MailOutlined />
                             </template>

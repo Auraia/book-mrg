@@ -36,12 +36,48 @@ router.post('/add', async(ctx) => {
 });
 
 router.get('/list', async(ctx) => {
-    const list = await Book.find().exec();
+    const {
+        page = 1,
+            size = 10,
+            keyword = ''
+    } = ctx.query;
+    //1 20
+    //2 20
+    //3 40 
+
+    const query = {};
+    if (keyword) {
+        query.name = keyword;
+    }
+    const list = await Book
+        .find(query)
+        //实现分页效果
+        .skip((page - 1) * size)
+        .limit(size)
+        .exec();
+
+    const total = await Book.countDocuments();
     ctx.body = {
-        data: list,
+        data: {
+            list,
+            total,
+            page,
+            size,
+        },
         code: 1,
         msg: '获取列表成功'
     };
+    router.delete('/:id', async(ctx) => {
+        const { id, } = ctx.params;
+    })
+    const delMsg = await Book.deleteOne({
+        _id: id,
+    })
+    ctx.body = {
+        data: delMsg,
+        msg: '删除成功',
+        code: 1,
+    }
 });
 
 module.exports = router;

@@ -12,6 +12,5 @@ export const login = (account, password) => {
     return axios.post('http://localhost:3000/auth/login', {
         account,
         password,
-
     });
 }

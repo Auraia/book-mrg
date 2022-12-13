@@ -11,7 +11,12 @@ export const list = (data) => {
 }
 
 export const remove = (id) => {
-    return axios.delete(`http://localhost:3000/book/${id}`, {
-        params: data,
-    })
+    return axios.delete(`http://localhost:3000/book/${id}`)
+}
+
+export const updateCount = (data = {}) => {
+    return axios.post(`http://localhost:3000/book/update/count`, data)
+}
+export const update = (data = {}) => {
+    return axios.post(`http://localhost:3000/book/update`, data)
 }

@@ -9,6 +9,7 @@ const defaultFormData = {
     author: '',
     publishDate: 0,
     classify: '',
+    count: ''
 }
 
 export default defineComponent({
